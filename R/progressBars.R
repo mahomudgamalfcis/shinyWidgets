@@ -82,7 +82,9 @@
 #'
 #' }
 progressBar <- function(id, value, total = NULL, display_pct = FALSE, size = NULL,
-                        status = NULL, striped = FALSE, title = NULL, range_value = NULL, unit_mark = "%") {
+                        status = NULL, striped = FALSE, title = NULL, range_value = NULL, unit_mark = "%",
+                        className=NULL) {
+  classListNames=c("progress-bar")
   if (!is.null(total)) {
     percent <- round(value / total * 100)
   } else {
@@ -119,7 +121,7 @@ progressBar <- function(id, value, total = NULL, display_pct = FALSE, size = NUL
         id = id,
         style=if(percent>0) paste0("width:", percent, "%;"),
         style=if(display_pct) "min-width: 2em;",
-        class="progress-bar",
+        class=if(!is.null(className))paste("progress-bar",className,sep=" ") else  "progress-bar",
         class=if(!is.null(status)) paste0("progress-bar-", status),
         class=if(striped) "progress-bar-striped",
         role="progressbar",
