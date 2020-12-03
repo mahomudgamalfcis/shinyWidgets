@@ -23,12 +23,10 @@ Each widget has an `update` method to change the value of an input from the serv
 
 Installation :
 ```r
-# From CRAN
-install.packages("shinyWidgets")
 
 # From Github
 # install.packages("devtools")
-devtools::install_github("dreamRs/shinyWidgets")
+devtools::install_github("mahomudgamalfcis/shinyWidgets")
 ```
 
 Demo :
